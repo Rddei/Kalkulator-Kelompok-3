@@ -1,0 +1,1 @@
+INDEX VERSION 1.134+C:\Users\Akmal G\Documents\Pribadi\Sekolah\Kuliah\Tugas\Semester 6\Software Testing\Kalkulator-Kelompok-3\.metadata\.plugins\org.eclipse.jdt.core
