@@ -21,13 +21,7 @@ public class Kalkulator {
     }
 
     public String komputasi(double a, double b, String operator) {
-        // Validasi: pastikan input adalah angka (sudah dijamin oleh tipe double)
-        // Validasi: rentang angka -32,768 hingga 32,767
-        if (a < -32768 || a > 32767 || b < -32768 || b > 32767) {
-            return "Error: Angka harus dalam rentang -32,768 hingga 32,767";
-        }
-
-        // Validasi: operator yang valid
+        // Validasi operator
         switch (operator) {
             case "+":
                 return String.valueOf(tambah(a, b));

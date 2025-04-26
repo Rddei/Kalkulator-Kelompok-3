@@ -32,16 +32,33 @@ public class KalkulatorTest {
     }
 
     @Test
-    void testKomputasi() {
-        // Test case valid
-        assertEquals("15.0", kalkulator.komputasi(10, 5, "+"));
-        assertEquals("5.0", kalkulator.komputasi(10, 5, "-"));
-        assertEquals("50.0", kalkulator.komputasi(10, 5, "*"));
-        assertEquals("2.0", kalkulator.komputasi(10, 5, "/"));
+    void testKomputasiValid() {
+        // Pengujian dengan 2 operand dan operator valid
+        assertEquals("15.0", kalkulator.komputasi(10, 5, "+"), "Penjumlahan 10 + 5 harus menghasilkan 15.0");
+        assertEquals("5.0", kalkulator.komputasi(10, 5, "-"), "Pengurangan 10 - 5 harus menghasilkan 5.0");
+        assertEquals("50.0", kalkulator.komputasi(10, 5, "*"), "Perkalian 10 * 5 harus menghasilkan 50.0");
+        assertEquals("2.0", kalkulator.komputasi(10, 5, "/"), "Pembagian 10 / 5 harus menghasilkan 2.0");
+    }
 
-        // Test case invalid
-        assertEquals("Error: Pembagi tidak boleh nol", kalkulator.komputasi(10, 0, "/"));
-        assertEquals("Error: Angka harus dalam rentang -32,768 hingga 32,767", kalkulator.komputasi(40000, 5, "+"));
-        assertEquals("Error: Operator tidak valid (+, -, *, /)", kalkulator.komputasi(10, 5, "%"));
+    @Test
+    void testKomputasiOperatorHuruf() {
+        // Pengujian dengan operator berupa huruf (mensimulasikan input tidak valid seperti huruf)
+        assertEquals("Error: Operator tidak valid (+, -, *, /)",
+                kalkulator.komputasi(10, 5, "x"),
+                "Operator 'x' harus menghasilkan pesan error");
+        assertEquals("Error: Operator tidak valid (+, -, *, /)",
+                kalkulator.komputasi(10, 5, "%"),
+                "Operator '%' harus menghasilkan pesan error");
+        assertEquals("Error: Operator tidak valid (+, -, *, /)",
+                kalkulator.komputasi(10, 5, "abc"),
+                "Operator 'abc' harus menghasilkan pesan error");
+    }
+
+    @Test
+    void testKomputasiPembagiNol() {
+        // Pengujian dengan 2 operand, salah satunya pembagi nol
+        assertEquals("Error: Pembagi tidak boleh nol",
+                kalkulator.komputasi(10, 0, "/"),
+                "Pembagian dengan nol harus menghasilkan pesan error");
     }
 }
