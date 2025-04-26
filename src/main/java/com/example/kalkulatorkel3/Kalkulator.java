@@ -21,7 +21,6 @@ public class Kalkulator {
     }
 
     public String komputasi(double a, double b, String operator) {
-        // Validasi operator
         switch (operator) {
             case "+":
                 return String.valueOf(tambah(a, b));
