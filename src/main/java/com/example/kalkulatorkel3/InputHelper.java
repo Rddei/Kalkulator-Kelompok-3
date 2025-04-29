@@ -6,9 +6,8 @@ public class InputHelper {
     private static final double MIN_RANGE = -32768;
     private static final double MAX_RANGE = 32767; // 1
 
-    public static double getValidOperand(Scanner scanner, String prompt) {
+    public static double getValidOperand(Scanner scanner) {
         while (true) { // 2
-            System.out.println(prompt); // 3
             String input = scanner.nextLine();
 
             try { // 4
