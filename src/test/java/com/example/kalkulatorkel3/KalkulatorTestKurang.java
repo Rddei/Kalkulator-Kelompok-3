@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class KalkulatorTestKurang {
-    private final OperasiKurang operator = new OperasiKurang();
+    private final Operasi operator = new Operasi();
 
     @Test
     void testKurang() {
