@@ -14,32 +14,32 @@ public class MainApp {
         String inputAngkaKedua;
         String inputAngkaKetiga;
 
-        do{
+        do{ // 2
             perinter.perin( "Masukkan angka pertama: ");
-            inputAngkaPertama = InputHelper.getRawInput(scanner); // 2 
-        }while(!ValidatorAngka.isValidDouble(inputAngkaPertama));
+            inputAngkaPertama = InputHelper.getRawInput(scanner); // 3
+        }while(!ValidatorAngka.isValidDouble(inputAngkaPertama)); // 4
         double nilaiPertama = ValidatorAngka.parseDouble(inputAngkaPertama);
 
-        perinter.perin("Masukkan operator pertama (+, -, *, /): ");
-        String operator1 = scanner.nextLine(); // 3
+        perinter.perin("Masukkan operator pertama (+, -, *, /): "); // 5
+        String operator1 = scanner.nextLine(); 
 
-        do{
+        do{ // 6
             perinter.perin( "Masukkan angka pertama: ");
-            inputAngkaKedua = InputHelper.getRawInput(scanner); // 2 
-        }while(!ValidatorAngka.isValidDouble(inputAngkaKedua));
-        double nilaiKedua = ValidatorAngka.parseDouble(inputAngkaKedua);
+            inputAngkaKedua = InputHelper.getRawInput(scanner); // 7
+        }while(!ValidatorAngka.isValidDouble(inputAngkaKedua)); // 8
+        double nilaiKedua = ValidatorAngka.parseDouble(inputAngkaKedua); 
 
         perinter.perin("Masukkan operator kedua (+, -, *, /): ");
-        String operator2 = scanner.nextLine(); // 5
+        String operator2 = scanner.nextLine(); // 9
 
-        do{
+        do{ // 10
             perinter.perin( "Masukkan angka ketiga: ");
-            inputAngkaKetiga = InputHelper.getRawInput(scanner); // 6
+            inputAngkaKetiga = InputHelper.getRawInput(scanner); // 11
         }while(!ValidatorAngka.isValidDouble(inputAngkaKetiga));
-        double nilaiKetiga = ValidatorAngka.parseDouble(inputAngkaKetiga);
+        double nilaiKetiga = ValidatorAngka.parseDouble(inputAngkaKetiga); // 12
 
         String finalResult = ComputeHelper.computeWithPrecedence(nilaiPertama, operator1, nilaiKedua, operator2, nilaiKetiga, kalkulator); // 7
-        perinter.perin("Hasil: " + finalResult); // 8
+        perinter.perin("Hasil: " + finalResult); // 13
 
         scanner.close(); // 9
     }
