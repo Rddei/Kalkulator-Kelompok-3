@@ -6,5 +6,5 @@ public class OperasiBagi {
             throw new IllegalArgumentException("Pembagi tidak boleh nol"); // 2
         }
         return a / b; // 3
-    }
+    }   
 }
