@@ -7,16 +7,21 @@ public class ValidatorAngka {
     private static final double MAX_RANGE = 32767;
 
     public static boolean isValidDouble(String input) { 
+        if (input == null || input.trim().isEmpty()) {
+            perinter.perin("Input tidak boleh kosong. Silakan masukkan angka:");
+            return false;
+        }
+        
         try { // 2
             double val = Double.parseDouble(input); // 3
             if (val >= MIN_RANGE && val <= MAX_RANGE){ // 4
                 return true; // 5
             } else {
-                perinter.perin("Input salah, Masukkan angka dalam rentang -32768 sampai 32767:"); // 6
+                perinter.perin("Input salah, Masukkan angka dalam rentang " + MIN_RANGE + " sampai " + MAX_RANGE + ":"); // 6
                 return false;
             }
         } catch (NumberFormatException e) { 
-            perinter.perin("Input salah, Masukkan angka:"); // 7
+            perinter.perin("Input salah, Masukkan angka yang valid:"); // 7
             return false; // bukan angka
         }
     }
